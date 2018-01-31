@@ -15,11 +15,12 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
-    @RequestMapping("/queryAll")
-    public List<UserEntity> queryAll(){
-        List<UserEntity> list = userMapper.getAll();
-        return list;
+    @RequestMapping("/getUsers")
+    public List<UserEntity> getUsers() {
+        List<UserEntity> users=userMapper.getAll();
+        return users;
     }
+
     @RequestMapping("/getUser")
     public UserEntity getUser(Long id) {
         UserEntity user=userMapper.getOne(id);
@@ -40,4 +41,6 @@ public class UserController {
     public void delete(@PathVariable("id") Long id) {
         userMapper.delete(id);
     }
+
+
 }
