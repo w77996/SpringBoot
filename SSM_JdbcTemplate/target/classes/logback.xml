@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<configuration>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%-5level] %d{HH:mm:ss.SSS} [%thread] %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.base}/logs/info.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		  <fileNamePattern>log/info.%d{yyyy-MM-dd}.log</fileNamePattern>
+		  <maxHistory>15</maxHistory>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>%date [%thread] %-5level %logger{0} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- 日志级别 -->
+	<root>
+		<level value="info" />
+		<appender-ref ref="console" />
+		<appender-ref ref="info" />
+	</root>
+
+</configuration>   
