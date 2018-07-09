@@ -9,6 +9,7 @@ import java.util.Date;
 
 @Slf4j
 public class ScheduledJob implements Job {
+
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         log.info("这是一个定时任务"+new Date());

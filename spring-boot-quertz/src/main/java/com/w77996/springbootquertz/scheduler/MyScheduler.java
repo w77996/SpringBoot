@@ -4,6 +4,7 @@ import com.w77996.springbootquertz.job.ScheduledJob;
 import com.w77996.springbootquertz.job.ScheduledJob2;
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Component;
 
