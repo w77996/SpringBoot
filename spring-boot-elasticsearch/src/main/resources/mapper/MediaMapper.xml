@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.w77996.springbootelasticsearch.mapper.MediaMapper" >
+
+    <!--查询已经发布的资讯-->
+    <select id="selectPublishMedias" resultType="media">
+        SELECT * FROM app_media
+        WHERE deleted_at IS NULL AND status = 1
+    </select>
+</mapper>
