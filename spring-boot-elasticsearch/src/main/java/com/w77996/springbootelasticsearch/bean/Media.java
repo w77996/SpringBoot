@@ -1,10 +1,16 @@
 package com.w77996.springbootelasticsearch.bean;
 
 import lombok.Data;
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.util.List;
 
+/**
+ *
+ * @author w77996
+ */
 @Data
+@Document(indexName = "es",type = "meida",indexStoreType="fs",shards=5,replicas=1,refreshInterval="-1")
 public class Media {
     private Integer id;
 
@@ -19,14 +25,11 @@ public class Media {
     private Integer isSendtoxzh;
 
     private Integer isSendtoxzhHistory;
-//    @NotNull
-//    @Digits(integer = 1,fraction = 0)
+
     private Integer isHot;
-    /*@NotNull
-    @Digits(integer = 1,fraction = 0)*/
+
     private Integer isPush;
-//    @NotNull
-//    @Digits(integer = 1,fraction = 0)
+
     private Integer isStick;
 
     private String stickEndtime;
@@ -38,8 +41,7 @@ public class Media {
     private String updatedAt;
 
     private String updatedTime;
-//    @NotNull
-//    @Digits(integer = 1,fraction = 0)
+
     private Integer status;
 
     private String title;
@@ -49,14 +51,13 @@ public class Media {
     private String editor;
 
     private String imageUrl;
-//    @NotNull
+
     private String articleTitle;
 
     private String articleContent;
 
     private String articleSummary;
-//    @NotNull
-//    @Digits(integer = 1,fraction = 0)
+
     private Integer originalType;
 
     private String sourceName;
@@ -66,7 +67,4 @@ public class Media {
     private String publishTime;
 
     private Integer authorId;
-
-
-
 }

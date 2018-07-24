@@ -1,8 +1,12 @@
+
+
 spring:
     data:
         elasticsearch:
+            repositories:
+              enabled: true
             cluster-name: elasticsearch
-            cluster-nodes: 120.78.170.123:9300
+            cluster-nodes: 119.23.167.190:9300
             properties:
                 path:
                   logs: ./elasticsearch/log #elasticsearch日志存储目录
@@ -10,9 +14,9 @@ spring:
     datasource:
        name: graduate
        driver-class-name: com.mysql.cj.jdbc.Driver
-       url: jdbc:mysql://rm-wz9uc334sczu55fp8do.mysql.rds.aliyuncs.com:3306/ceshi__jinniu?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&userSSL=true
-       username: xiehao
-       password: xiehao2018!@#
+       url: jdbc:mysql://119.23.75.136:3306/liehu?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&userSSL=true
+       username: root
+       password: jinniu2018!@#
        # 使用druid数据源
        type: com.alibaba.druid.pool.DruidDataSource
        initialSize: 5
@@ -32,10 +36,17 @@ spring:
        jackson:
            date-format: yyyy-MM-dd HH:mm:ss
            time-zone: GMT+08
-
-
 mybatis:
     mapperLocations: classpath*:mapper/*.xml
     typeAliasesPackage: com.w77996.springbootelasticsearch.bean
     executorType: SIMPLE
     config-location: classpath:mybatis/mybatis-config.xml
+logging:
+  level:
+    root: info
+    com:
+      jinniu:
+        demeter:
+          mapper: debug
+server:
+  port: 8111

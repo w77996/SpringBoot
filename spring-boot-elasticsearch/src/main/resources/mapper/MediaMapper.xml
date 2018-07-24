@@ -5,6 +5,6 @@
     <!--查询已经发布的资讯-->
     <select id="selectPublishMedias" resultType="media">
         SELECT * FROM app_media
-        WHERE deleted_at IS NULL AND status = 1
+        WHERE deleted_at IS NULL AND status = 1 limit 0,10
     </select>
 </mapper>

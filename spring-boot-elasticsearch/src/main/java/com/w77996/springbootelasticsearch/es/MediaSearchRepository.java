@@ -1,4 +1,4 @@
-package com.w77996.springbootelasticsearch.dao;
+package com.w77996.springbootelasticsearch.es;
 
 import com.w77996.springbootelasticsearch.bean.Media;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;

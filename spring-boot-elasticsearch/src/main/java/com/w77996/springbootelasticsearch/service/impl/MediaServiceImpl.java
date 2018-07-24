@@ -16,6 +16,7 @@ import java.util.List;
  */
 @Service
 public class MediaServiceImpl implements MediaService {
+
     @Autowired
     private MediaMapper mediaMapper;
 
