@@ -1,2 +1,44 @@
-server:
-  port: 8200
+spring:
+    profiles:
+        active: dev
+    datasource:
+        name: graduate
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://rm-wz9uc334sczu55fp8do.mysql.rds.aliyuncs.com:3306/ceshi__jinniu?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&userSSL=true
+        username: xiehao
+        password: xiehao2018!@#
+            # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        initialSize: 5
+        minIdle: 5
+        maxActive: 30
+        maxWait: 2000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxPoolPreparedStatementPerConnectionSize: 20
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+        useGlobalDataSourceStat: true
+        jackson:
+            date-format: yyyy-MM-dd HH:mm:ss
+            time-zone: GMT+08
+logging:
+  level:
+    root: info
+    com:
+      w77996:
+        dao: debug
+#mybatis 配置
+mybatis:
+    mapperLocations: classpath*:dao/*.xml
+    typeAliasesPackage: com.w77996.entity
+    executorType: SIMPLE
+    config-location: classpath:mybatis/mybatis-config.xml
+
+
+
+
