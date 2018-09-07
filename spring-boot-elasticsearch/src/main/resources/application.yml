@@ -6,7 +6,7 @@ spring:
             repositories:
               enabled: true
             cluster-name: elasticsearch
-            cluster-nodes: 119.23.167.190:9300
+            cluster-nodes: 120.78.170.123:9300
             properties:
                 path:
                   logs: ./elasticsearch/log #elasticsearch日志存储目录

@@ -29,10 +29,10 @@ public class TopicConfig {
         return new TopicExchange("topicExchange");
     }
 
-//    @Bean
-//    Binding bindingExchangeMessage(Queue queueMessage, TopicExchange exchange) {
-//        return BindingBuilder.bind(queueMessage).to(exchange).with("topic.message");
-//    }
+    @Bean
+    Binding bindingExchangeMessage(Queue queueMessage, TopicExchange exchange) {
+        return BindingBuilder.bind(queueMessage).to(exchange).with("topic.message1");
+    }
 
     @Bean
     Binding bindingExchangeMessages(Queue queueMessages, TopicExchange exchange) {
